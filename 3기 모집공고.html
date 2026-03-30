@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>푸르고 제3기 팀장 모집</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            background: linear-gradient(180deg, #4f46e5 0%, #6366f1 30%, #818cf8 60%, #c7d2fe 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* ── 헤더 ── */
+        .header {
+            background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem 2.4rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(49,46,129,0.35);
+        }
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+        .header .subtitle {
+            font-size: 1rem;
+            opacity: 0.82;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #78350f;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* ── 상단 안내 배너 ── */
+        .top-notice {
+            background: #fef3c7;
+            border: 1.5px solid #fbbf24;
+            color: #78350f;
+            text-align: center;
+            padding: 0.9rem 1.5rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(251,191,36,0.2);
+        }
+        .top-notice a {
+            color: #4f46e5;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ── 섹션 카드 ── */
+        .section {
+            border-radius: 18px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .section-light { background: #eef2ff; }
+        .section-white { background: #fff; }
+        .section-cream { background: #fefce8; }
+        .section-mint { background: #ecfdf5; }
+
+        .section h2 {
+            color: #4338ca;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section p, .section li {
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        /* ── 컬러 섹션 ── */
+        .section-dark {
+            background: linear-gradient(135deg, #4338ca, #6d28d9);
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(67,56,202,0.3);
+        }
+        .section-dark h2 { color: #fff; }
+        .section-dark p, .section-dark li { color: rgba(255,255,255,0.92); }
+
+        .section-gold {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #78350f;
+            box-shadow: 0 8px 28px rgba(251,191,36,0.3);
+        }
+        .section-gold h2 { color: #78350f; }
+
+        .section-green {
+            background: linear-gradient(135deg, #059669, #047857);
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(5,150,105,0.3);
+        }
+        .section-green h2 { color: #fff; }
+
+        .section-purple {
+            background: linear-gradient(135deg, #7c3aed, #9333ea);
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(124,58,237,0.3);
+        }
+        .section-purple h2 { color: #fff; }
+
+        /* ── 카드 그리드 ── */
+        .grid { display: grid; gap: 0.8rem; margin: 1rem 0; }
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+        .card {
+            background: #fff;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .card .emoji { font-size: 1.6rem; margin-bottom: 0.4rem; }
+        .card h3 { font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; }
+        .card p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
+
+        /* ── 강조 박스 ── */
+        .accent-box {
+            background: linear-gradient(135deg, #4338ca, #6d28d9);
+            color: #fff;
+            padding: 1.2rem 1.4rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.7;
+            margin: 1rem 0;
+        }
+
+        .gold-box {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #78350f;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        /* ── FAQ ── */
+        .faq-item {
+            background: #fff;
+            padding: 1.1rem 1.3rem;
+            border-radius: 10px;
+            border-left: 3px solid #4338ca;
+            margin-bottom: 0.6rem;
+        }
+        .faq-item h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #4338ca;
+            margin-bottom: 0.3rem;
+        }
+        .faq-item p {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* ── 요건 태그 ── */
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
+        .tag-item {
+            background: #eef2ff;
+            border: 1.5px solid #c7d2fe;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #3730a3;
+        }
+
+        /* ── CTA 약속 ── */
+        .promise {
+            background: #1e1b4b;
+            color: #fff;
+            padding: 2rem 1.6rem;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 28px rgba(30,27,75,0.3);
+        }
+        .promise h2 { font-size: 1.2rem; color: #fff; margin-bottom: 0.8rem; }
+        .promise p { font-size: 0.95rem; opacity: 0.88; line-height: 1.9; }
+
+        /* ── 푸터 CTA ── */
+        .footer-cta {
+            background: linear-gradient(135deg, #059669, #047857);
+            color: #fff;
+            padding: 2rem 1.6rem;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 28px rgba(5,150,105,0.3);
+        }
+        .footer-cta h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .footer-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.2rem; line-height: 1.7; }
+        .footer-cta .btn {
+            display: inline-block;
+            background: #fff;
+            color: #047857;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+        .footer-cta .btn:hover { transform: scale(1.04); }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ── 반응형 ── */
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .header { padding: 2.2rem 1.2rem 2rem; }
+            .header h1 { font-size: 1.6rem; }
+            .section { padding: 1.3rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ━━ 헤더 ━━ -->
+    <header class="header">
+        <h1>푸르고 제3기 팀장 모집</h1>
+        <p class="subtitle">1·2기의 성공을 발판으로, 당신의 새 출발을 함께합니다</p>
+        <div class="badge">👫 부부팀 모집</div>
+    </header>
+
+    <!-- ━━ 상단 안내 배너 ━━ -->
+    <div class="top-notice">
+        📌 지원 신청은 페이지 하단의 <a href="#apply">구글폼</a>을 통해 접수해 주세요!
+    </div>
+
+    <!-- ━━ 왜 푸르고 ━━ -->
+    <section class="section section-dark">
+        <h2>💡 왜 푸르고인가요?</h2>
+
+        <p style="font-size:1rem; margin-bottom:1.2rem; text-align:center; font-weight:600;">
+            대부분의 청소 일은 비전이 없습니다.<br>
+            푸르고는 <strong style="color:#fbbf24;">'수익 상승 사다리'</strong>가 있습니다.
+        </p>
+
+        <div style="background:rgba(255,255,255,0.1); padding:1.2rem; border-radius:10px; margin-bottom:1rem;">
+            <p style="font-size:0.92rem; line-height:1.9;">
+                ❌ "일감이 없으면 어떡하지?" — 수입 불안정<br>
+                ❌ "나이 들어서도 할 수 있을까?" — 미래 불안<br>
+                ❌ "사업은 하고 싶지만 영업이…" — 창업 리스크
+            </p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.6rem;">
+            <div style="background:rgba(255,255,255,0.12); padding:1rem; border-radius:10px;">
+                <strong style="color:#fbbf24;">1️⃣ 압도적인 고용 안정성</strong>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">계약 해지율 0% · 본사가 영업한 고정 현장 매칭 · 영업 부담 없음</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.12); padding:1rem; border-radius:10px;">
+                <strong style="color:#fbbf24;">2️⃣ 업계 최고 수준 대우</strong>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">체계적 SOP 교육 · 프리미엄 기술 · 높은 단가 기반 고수익</p>
+            </div>
+            <div style="background:rgba(251,191,36,0.18); padding:1rem; border-radius:10px; border:1.5px solid rgba(251,191,36,0.4);">
+                <strong style="color:#fbbf24;">3️⃣ 근로소득 → 사업소득 전환</strong>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">단순 근로자가 아닌, 진짜 사업가로 성장하는 길을 열어드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━ 모집 계기 ━━ -->
+    <section class="section section-light">
+        <h2>📢 제3기 모집 계기</h2>
+        <p style="margin-bottom:1rem;">
+            1·2기 팀장님과 함께 안정적인 운영 시스템을 구축하고 수익 모델을 검증했습니다.
+            고객사가 꾸준히 늘어나면서 <strong style="color:#4338ca;">제3기 부부팀 파트너 팀장님</strong>을 모집합니다.
+        </p>
+        <div class="gold-box">👫 부부팀 모집 — 함께 일하며 더 큰 수입과 안정을 만들어가세요!</div>
+    </section>
+
+    <!-- ━━ 교육 시스템 ━━ -->
+    <section class="section section-white">
+        <h2>📚 체계적인 교육 시스템</h2>
+
+        <div style="background:#eef2ff; padding:1.2rem; border-radius:10px; border-left:3px solid #4338ca; margin-bottom:1rem;">
+            <p style="font-size:0.95rem; color:#312e81;">
+                <strong>👨‍🏫 대표 팀장이 직접 교육</strong> — 1·2기를 통해 검증된 커리큘럼으로 경험 없이 시작해도 충분히 성공할 수 있습니다.
+            </p>
+        </div>
+
+        <div class="accent-box">
+            <strong>🎓 단계별 성장 경로</strong><br>
+            Lv.1 교육생 → Lv.2 독립 팀장 → Lv.3 마스터 → Lv.4 매니저 → Lv.5 지사장
+        </div>
+
+        <div style="background:#ecfdf5; padding:1.2rem; border-radius:10px; border-left:3px solid #059669; margin-top:0.8rem;">
+            <p style="font-size:0.9rem; color:#064e3b; line-height:1.9;">
+                <strong>[Lv.1]</strong> 교육생·부사수 : 실전 교육 + 현장 투입<br>
+                <strong>[Lv.2]</strong> 독립 팀장 : 차량·장비 지원, 고수익 실현<br>
+                <strong>[Lv.3]</strong> 마스터 : 다수 현장 관리, 수익 극대화<br>
+                <strong>[Lv.4–5]</strong> 매니저·지사장 : 교육·관리 수익 (사업소득 전환)
+            </p>
+        </div>
+    </section>
+
+    <!-- ━━ 초보자 안심 ━━ -->
+    <section class="section section-gold">
+        <h2>🔰 초보자도 안심하세요!</h2>
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="emoji">🧹</div>
+                <h3>경험 없어도 OK</h3>
+                <p>대표 팀장 직접 교육</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🎓</div>
+                <h3>교육비 무료</h3>
+                <p>3기 특별 혜택</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🤝</div>
+                <h3>검증된 시스템</h3>
+                <p>1·2기 노하우로 빠른 정착</p>
+            </div>
+            <div class="card">
+                <div class="emoji">💪</div>
+                <h3>누구나 가능</h3>
+                <p>성실함 하나면 충분</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━ 업무 내용 ━━ -->
+    <section class="section section-cream">
+        <h2>💼 이런 일을 하게 돼요</h2>
+        <p style="margin-bottom:1rem;">
+            고객사 직원 퇴근 후, <strong>다음 날 아침 쾌적한 환경을 만드는 사무실 관리 업무</strong>입니다.
+        </p>
+
+        <div style="background:#fff; padding:1.1rem; border-radius:10px; border-left:3px solid #4338ca; margin-bottom:1rem;">
+            <p style="font-size:0.92rem; color:#312e81; line-height:1.8;">
+                👤 <strong>조용한 환경</strong>에서 부부가 함께 진행<br>
+                📋 체계적 가이드만 따라하면 충분<br>
+                😌 인간관계 스트레스 없이 깔끔하게 완료
+            </p>
+        </div>
+
+        <div class="accent-box">
+            📌 <strong>업무 흐름</strong> : 본사 출근 → 장비 수령 → 현장 업무 → 퇴근 후 반납
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="emoji">✨</div>
+                <h3>쾌적한 환경</h3>
+                <p>깨끗한 사무실 근무</p>
+            </div>
+            <div class="card">
+                <div class="emoji">📚</div>
+                <h3>체계적 매뉴얼</h3>
+                <p>검증된 가이드 제공</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🕐</div>
+                <h3>19시~06시</h3>
+                <p>유연한 자율 스케줄</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━ FAQ ━━ -->
+    <section class="section section-light">
+        <h2>❓ 자주 묻는 질문</h2>
+        <div class="faq-item">
+            <h3>Q. 청소 경험이 전혀 없는데 괜찮을까요?</h3>
+            <p>A. 전혀 문제없습니다! 대표 팀장이 직접 현장 동행 교육을 진행하며, 교육비도 무료입니다.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. 실수하면 어떻게 되나요?</h3>
+            <p>A. 완전히 자립할 때까지 회사에서 밀착 케어합니다. 끝까지 도와드려요.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. 장비를 직접 사야 하나요?</h3>
+            <p>A. 아닙니다! 모든 장비와 소모품은 회사에서 무상 제공합니다.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. 왜 교육비를 받지 않나요?</h3>
+            <p>A. 3기도 특별 혜택으로 교육비 없이 진행합니다. 단, 품질 유지를 위해 교육 평가를 심도 있게 진행하니 성실히 참여하실 분만 지원해 주세요.</p>
+        </div>
+    </section>
+
+    <!-- ━━ 3기 특별 혜택 ━━ -->
+    <section class="section section-purple">
+        <h2>⭐ 제3기 특별 혜택</h2>
+        <div class="grid grid-3">
+            <div class="card" style="border:1.5px solid #fbbf24; background:#fffbeb;">
+                <div class="emoji">👫</div>
+                <h3>부부팀 모집</h3>
+                <p>함께 일하며 안정적 수입 확보</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🎯</div>
+                <h3>검증된 시스템</h3>
+                <p>1·2기 노하우로 빠른 정착</p>
+            </div>
+            <div class="card">
+                <div class="emoji">🏆</div>
+                <h3>초기 멤버 우대</h3>
+                <p>빠른 승진 기회 + 특별 혜택</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━ 이런 분을 찾아요 ━━ -->
+    <section class="section section-white">
+        <h2>🎯 이런 부부를 찾아요</h2>
+
+        <div class="gold-box" style="font-size:1.05rem; padding:1.2rem;">
+            👫 함께 일하며 더 큰 수입과 안정성을 원하는 <strong>부부팀</strong>을 모집합니다!
+        </div>
+
+        <div class="card" style="border:2px solid #fbbf24; text-align:left; margin-top:1rem; background:#fffbeb;">
+            <h3 style="text-align:center; font-size:1rem; color:#78350f;">👫 부부팀의 장점</h3>
+            <p style="font-size:0.9rem; line-height:2; margin-top:0.6rem; color:#334155;">
+                • 부부가 협력하여 업무 효율 극대화<br>
+                • 더 많은 현장 담당 가능 → 수입 극대화<br>
+                • 서로 의지하며 안정적으로 정착<br>
+                • <strong style="color:#b45309;">월 1,000만원 수익 달성 가능</strong>
+            </p>
+        </div>
+
+        <h3 style="font-size:0.95rem; color:#4338ca; margin:1.2rem 0 0.6rem;">✅ 기본 조건</h3>
+        <div class="tags">
+            <span class="tag-item">🚗 차량 보유 (또는 회사 지원)</span>
+            <span class="tag-item">✅ 성실하고 책임감 있는 부부</span>
+            <span class="tag-item">🌙 야간 근무 가능</span>
+        </div>
+    </section>
+
+    <!-- ━━ 회사 지원 ━━ -->
+    <section class="section section-mint">
+        <h2>🛠️ 회사에서 지원해드려요</h2>
+
+        <div class="accent-box" style="margin-bottom:1rem;">
+            💯 <strong>초기 비용 없이 바로 시작!</strong> 장비·소모품 일체 본사 제공
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card"><div class="emoji">🧽</div><h3>청소 장비</h3><p>100% 무상 제공</p></div>
+            <div class="card"><div class="emoji">🧴</div><h3>소모품</h3><p>세제·마포 등 무상</p></div>
+            <div class="card"><div class="emoji">📞</div><h3>고객 관리</h3><p>문의 응대 회사 전담</p></div>
+            <div class="card"><div class="emoji">🎓</div><h3>교육</h3><p>대표 직접 교육 (무료)</p></div>
+            <div class="card"><div class="emoji">🛡️</div><h3>보호 시스템</h3><p>갑질 발생 시 회사 해결</p></div>
+            <div class="card"><div class="emoji">☕</div><h3>식음료</h3><p>간단한 음료 제공</p></div>
+        </div>
+
+        <div style="background:#fff; padding:1rem 1.2rem; border-radius:10px; border-left:3px solid #4338ca; margin-top:0.8rem; font-size:0.9rem; color:#475569; line-height:1.8;">
+            🚗 개인 차량: 유류비 본인 부담 &nbsp;|&nbsp; 차량 없을 시: 회사 지원 가능 (사용료·유류비 본인 부담)
+        </div>
+    </section>
+
+    <!-- ━━ 수입 정보 ━━ -->
+    <section class="section section-green">
+        <h2>💰 수입 정보</h2>
+
+        <div style="background:rgba(251,191,36,0.2); padding:1.8rem; border-radius:14px; text-align:center; border:2px solid #fbbf24; box-shadow:0 0 20px rgba(251,191,36,0.25);">
+            <div style="font-size:2rem; margin-bottom:0.3rem;">👫</div>
+            <div style="font-size:0.9rem; opacity:0.9; margin-bottom:0.6rem;">부부팀</div>
+            <div style="font-size:2rem; font-weight:800; color:#fbbf24;">월 1,000만원</div>
+            <div style="font-size:0.82rem; opacity:0.8; margin-top:0.4rem;">건별 단가제 기준 · 달성 가능</div>
+        </div>
+
+        <div style="text-align:center; background:rgba(255,255,255,0.1); padding:1rem; border-radius:10px; margin-top:1rem;">
+            <p style="font-size:0.9rem; opacity:0.92;">
+                💡 업무 방식·수입 구조는 개별 미팅에서 상세히 안내드립니다<br>
+                ✨ 일회성 청소 등 다양한 추가 수익 기회도 있습니다
+            </p>
+        </div>
+    </section>
+
+    <!-- ━━ 푸르고의 약속 ━━ -->
+    <div class="promise">
+        <h2>💡 푸르고의 약속</h2>
+        <p>
+            1·2기 팀장님과 함께 안정적인 시스템을 만들었습니다.<br>
+            이제 검증된 방식으로 3기 팀장님을 모십니다.<br><br>
+            한 분 한 분이 안정적으로 자리잡고 성장할 수 있도록<br>
+            든든하게 지원하겠습니다.<br><br>
+            <strong>팀장님이 성공해야 푸르고도 함께 성장한다고 믿습니다.</strong>
+        </p>
+    </div>
+
+    <!-- ━━ 하단 상담 신청 ━━ -->
+    <div class="footer-cta" id="apply">
+        <h3>📝 제3기 상담 신청</h3>
+        <p>
+            아래 버튼을 눌러 구글폼 지원서를 작성해 주세요<br>
+            <strong style="color:#fbbf24;">👫 부부팀 모집</strong>
+        </p>
+        <a href="https://forms.gle/zoTuJnguxsVYFbGn8" target="_blank" class="btn">
+            🚀 제3기 상담 신청하기
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        1·2기와 함께 성장할 3기 부부 파트너를 찾고 있습니다. 🤝
+    </div>
+
+</div>
+</body>
+</html>
