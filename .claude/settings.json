@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "human-state-skills": {
+      "source": {
+        "source": "github",
+        "repo": "softcane/human-state-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "human-state-skills@human-state-skills": true
+  }
+}
